@@ -17,7 +17,7 @@ new Vue({
                 type: "POST",
                 url: 'http://' + self.hostport + '/api/services/tts/amazon_polly_say?api_password=' + self.api_password,
                 data: JSON.stringify({
-                    entity_id: self.entity_ids,
+                    entity_id: self.entity_selected,
                     message: self.message
                 }),
                 success: function(response) {

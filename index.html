@@ -21,7 +21,6 @@
                     <h1>Home Assistant</h1>
                     <h2>TTS Test</h2>
                 </div>
-                <p class="lead">{{ entity_selected }}</p>
                 <pre v-if="result">>{{ result }}</pre>
                 <p>
                     <form method="POST" v-on:submit.prevent="magic">
@@ -37,14 +36,13 @@
                         <div class="form-group">
                             <label for="api_password">Entity Id's</label><br />
                             <div v-for="entity in entity_ids">
-                                {{ entity }}
+                                <input type="checkbox" :id="entity" :value="entity" v-model="entity_selected">
+                                <label :for="entity">{{ entity }}</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="api_password">Message / SSML</label>
-                            <textarea v-model="message" placeholder="Say something cool!" style="width: 100%; height: 200px">
-
-                            </textarea>
+                            <label for="api_password">Message / SSML </label>
+                            <textarea v-model="message" placeholder="Say something cool!" style="width: 100%; height: 200px"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Submit</button>
