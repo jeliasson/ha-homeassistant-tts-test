@@ -15,17 +15,31 @@ var vm = new Vue({
         sonos_host: null, // null defaults to data.host
         sonos_port: 5005
     },
+    computed: {
+        haEndpoint: function() {
+            return 'http://' + this.host + ':' + this.port + '/api/services/tts/amazon_polly_say?api_password=' + this.api_password;
+        },
+        haEndpointMasked: function() {
+            return 'http://' + this.host + ':' + this.port + '/api/services/tts/amazon_polly_say?api_password=' + this.api_password.replace(/./g, '*');
+        },
+        input: function() {
+            return {
+                entity_id: this.entity_selected,
+                message: this.message
+            };
+        },
+        inputStringifyed: function() {
+            return JSON.stringify(this.input);
+        }
+    },
     methods: {
         magic: function () {
             var self = this;
 
             $.ajax({
                 type: "POST",
-                url: 'http://' + self.host + ':' + self.port + '/api/services/tts/amazon_polly_say?api_password=' + self.api_password,
-                data: JSON.stringify({
-                    entity_id: self.entity_selected,
-                    message: self.message
-                }),
+                url: self.haEndpoint,
+                data: self.inputStringifyed,
                 success: function(response) {
                     self.result = response;
                 },

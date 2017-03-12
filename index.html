@@ -23,24 +23,31 @@
                         This is a testing tool for <a href="https://www.home-assistant.io" alt="Home Assistant">Home Assistant</a>'s TTS (Text-To-Speech) using <a href="https://home-assistant.io/components/tts.amazon_polly/" alt="Amazon Polly on Home Assistant">Amazon Polly</a>, and optionally <a href="https://github.com/jishi/node-sonos-http-api" alt="jishi/node-sonos-http-api">jishi/node-sonos-http-api</a> for discovering Sonos speakers as entity_id's.
                     </p>
                 </div>
-                <pre v-if="result">>{{ result }}</pre>
+                <p>
+                    <label for="host">Generated output</label>
+<pre v-if="haEndpointMasked">
+<strong>POST {{ haEndpointMasked }}</strong>
+{{ input }}
+</pre>
+                </p>
+                <pre v-if="result">{{ result }}</pre>
                 <p>
                     <form method="POST" v-on:submit.prevent="magic">
                         <div class="form-group">
                             <label for="host">Host:Port</label>
                             <div class="form-inline">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" :id="host" :name="host" v-model="host">
+                                    <input type="text" class="form-control" :id="host" :name="host" v-model="host" placeholder="Home Assistant Host">
                                 </div>
                                 <div class="form-group">
                                     <label for="host">:</label>
-                                    <input type="text" class="form-control" :id="port" :name="port" v-model="port" placeholder="8123 (Home Assistant)">
+                                    <input type="text" class="form-control" :id="port" :name="port" v-model="port" placeholder="Port (default: 8123)">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="api_password">API Password</label>
-                            <input type="password" class="form-control" :id="api_password" :name="api_password" v-model="api_password">
+                            <input type="password" class="form-control" :id="api_password" :name="api_password" v-model="api_password" placeholder="Home Assistant API Password">
                         </div>
                         <div class="form-group">
                             <label for="api_password">Entity Id's</label><br />
