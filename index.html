@@ -18,8 +18,7 @@
         <div id="app">
             <div class="container">
                 <div class="page-header">
-                    <h1>Home Assistant</h1>
-                    <h2>TTS Test</h2>
+                    <h1>Home Assistant: TTS Test</h1>
                 </div>
                 <pre v-if="result">>{{ result }}</pre>
                 <p>
@@ -32,14 +31,14 @@
                             <label for="api_password">API Password</label>
                             <input type="password" class="form-control" :id="api_password" :name="api_password" v-model="api_password">
                         </div>
-
                         <div class="form-group">
                             <label for="api_password">Entity Id's</label><br />
-                            <div v-for="entity in entity_ids">
+                            <div v-for="entity in entity_ids" class="entitys">
                                 <input type="checkbox" :id="entity" :value="entity" v-model="entity_selected">
                                 <label :for="entity">{{ entity }}</label>
                             </div>
                         </div>
+                        <hr />
                         <div class="form-group">
                             <label for="api_password">Message / SSML </label>
                             <textarea v-model="message" placeholder="Say something cool!" style="width: 100%; height: 200px"></textarea>
