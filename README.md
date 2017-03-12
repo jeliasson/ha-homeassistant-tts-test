@@ -3,7 +3,7 @@ This is a testing tool for Home Assistant's TTS (Text-To-Speech) using Amazon Po
 
 
 ## Deployment
-This repository is automatically published to [jeliasson-ha-homeassistant-tts-test](http://jeliasson-ha-homeassistant-tts-test.azurewebsites.net) on [Azure](https://azure.microsoft.com/en-us/services/app-service/web).
+This repository is automatically published to [https://jeliasson-ha-homeassistant-tts-test](http://jeliasson-ha-homeassistant-tts-test.azurewebsites.net) on [Azure](https://azure.microsoft.com/en-us/services/app-service/web).
 
 ## Install
 Setup your Home Assistant configuration.yaml for Amazon Polly:
