@@ -6,8 +6,7 @@ This is a testing tool for Home Assistant's TTS (Text-To-Speech) using Amazon Po
 This repository is automatically published to [https://jeliasson-ha-homeassistant-tts-test](http://jeliasson-ha-homeassistant-tts-test.azurewebsites.net) on [Azure](https://azure.microsoft.com/en-us/services/app-service/web).
 
 ## Install
-Setup your Home Assistant configuration.yaml for Amazon Polly:
-
+- Setup your Home Assistant configuration.yaml for Amazon Polly:
 ```yaml
 tts:
   - platform: amazon_polly
@@ -16,10 +15,12 @@ tts:
     region_name: 'eu-west-1'
     text_type: ssml
 ```
+- (Install [jishi/node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) for discovering Sonos speakers as entity_id's)
+- Clone/fork this repo
+- Publish/run ```index.html```. 
 
 ### Todo
 * Add volume
-
 
 ## Contribute
 Feel free!
