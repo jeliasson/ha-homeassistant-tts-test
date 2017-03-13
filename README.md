@@ -1,4 +1,4 @@
-# Home Assistant TTS Test
+# Home Assistant TTS Test using Amazon Polly
 This is a testing tool for Home Assistant's TTS (Text-To-Speech) using Amazon Polly, and [jishi/node-sonos-http-api](https://github.com/jishi/node-sonos-http-api) for discovering Sonos speakers as entity_id's.
 
 
